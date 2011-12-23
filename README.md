@@ -9,16 +9,16 @@ Check out the "[src/out]/test/" folders for example(s).
 ## Syntax
 CoffeeScript:<pre>
 myFn = new MultiFn {
-  "Number Number": (_n1, _n2) -> myFn(_n1) + myFn(_n2)
-  "Number":  (_num) -> _num
-  "String": (_str) -> parseInt(_str, 10)
+  "Number Number": (\_n1, \_n2) -> myFn(\_n1) + myFn(\_n2)
+  "Number":  (\_num) -> \_num
+  "String": (\_str) -> parseInt(\_str, 10)
 }
 </pre>
 JavaScript:<pre>
 var myFn = new MultiFn({
-  "Number Number": function (_n1, _n2) { return myFn(_n1) + myFn(_n2); },
-  "Number": function (_num) { return _num; },
-  "String": function (_str) { return parseInt(_str, 10); }
+  "Number Number": function (\_n1, \_n2) { return myFn(\_n1) + myFn(\_n2); },
+  "Number": function (\_num) { return \_num; },
+  "String": function (\_str) { return parseInt(\_str, 10); }
 });
 </pre>
 
@@ -49,6 +49,6 @@ The string of types identifying the arguments for an implementation, is used a s
 
 This means that instead of writing "Number", you could write "Num", or event just "N".  It also means you can do things like "Element" which would match "HTMLElement", "HTMLBodyElement", etc...
 
-Another adavantage to this, is that ".*" will match any type of value:<pre>
-"Number .* Number": (_num1, _anything, _num2) -> #...
+Another adavantage to this, is that ".\*" will match any type of value:<pre>
+"Number .\* Number": (\_num1, \_anything, \_num2) -> #...
 </pre>
