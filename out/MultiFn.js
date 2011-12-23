@@ -1,6 +1,6 @@
 
 /*!
- * MultiFn.js JavaScript Utility v1.0.0
+ * MultiFn.js JavaScript Utility v2.0.0
  * http://github.com/LiamGoodacre/MultiFn.js
  * 
  * Copyright 2011, Liam Goodacre
@@ -32,7 +32,7 @@
           if (_args && _args.length === dat.length) {
             for (index = 0, _len = dat.length; index < _len; index++) {
               item_type = dat[index];
-              if (_args && $api.Type(_args[index]) !== item_type) return false;
+              if (_args && !$api.Type(_args[index]).match(item_type)) return false;
             }
             return true;
           }

@@ -1,5 +1,5 @@
 ###!
- * MultiFn.js JavaScript Utility v1.0.0
+ * MultiFn.js JavaScript Utility v2.0.0
  * http://github.com/LiamGoodacre/MultiFn.js
  * 
  * Copyright 2011, Liam Goodacre
@@ -26,7 +26,7 @@
       return (_args) ->
         if _args && _args.length is dat.length
           for item_type, index in dat
-            if _args and $api.Type(_args[index]) isnt item_type
+            if _args and not $api.Type(_args[index]).match item_type
               return false
           return true
         return false
