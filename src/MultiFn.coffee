@@ -10,11 +10,11 @@
  * Date : 2011_12_23
 ###
 @MultiFn || @MultiFn = (->
-  __toString = Object.prototype.toString
+  __toString = (_val) -> Object::toString.call(_val)
   $api =
-    # Determins the type of a value
+    # Determines the type of a value
     Type: (_value) ->
-      return __toString.call(_value).slice(8, -1)
+      return __toString(_value).slice(8, -1)
     
     # Determines if a value is a function
     IsFunction: (_value) ->

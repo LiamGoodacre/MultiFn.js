@@ -16,10 +16,12 @@
 
   this.MultiFn || (this.MultiFn = (function() {
     var $api, $ui, __toString;
-    __toString = Object.prototype.toString;
+    __toString = function(_val) {
+      return Object.prototype.toString.call(_val);
+    };
     $api = {
       Type: function(_value) {
-        return __toString.call(_value).slice(8, -1);
+        return __toString(_value).slice(8, -1);
       },
       IsFunction: function(_value) {
         return $api.Type(_value) === "Function";
