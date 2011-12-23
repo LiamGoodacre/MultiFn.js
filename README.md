@@ -9,16 +9,16 @@ Check out the "[src/out]/test/" folders for example(s).
 ## Syntax
 CoffeeScript:<pre>
 myFn = new MultiFn {
-  "Number Number": (_args) -> myFn(_args[0]) + myFn(_args[1])
-  "Number":  (_args) -> _args[0]
-  "String": (_args) -> parseInt(_args[0], 10)
+  "Number Number": (_n1, _n2) -> myFn(_n1) + myFn(_n2)
+  "Number":  (_num) -> _num
+  "String": (_str) -> parseInt(_str, 10)
 }
 </pre>
 JavaScript:<pre>
 var myFn = new MultiFn({
-  "Number Number": function (_args) { return myFn(_args[0]) + myFn(_args[1]); }
-  "Number": function (_args) { return _args[0]; }
-  "String": function (_args) { return parseInt(_args[0], 10); }
+  "Number Number": function (_n1, _n2) { return myFn(_n1) + myFn(_n2); },
+  "Number": function (_num) { return _num; },
+  "String": function (_str) { return parseInt(_str, 10); }
 });
 </pre>
 
@@ -28,7 +28,7 @@ MultiFn supports having a default implementation function, should none of the ar
 CoffeeScript:<pre>
 someFn = new MultiFn {
   #...other functions...
-  "default": (_args) ->
+  "default": ->
     # some default implementation
   #...other functions...
 }
@@ -37,7 +37,7 @@ someFn = new MultiFn {
 JavaScript:<pre>
 var someFn = new MultiFn({
   //...other functions...
-  "default": function (_args) {
+  "default": function () {
     // some default implementation
   },
   //...other functions...

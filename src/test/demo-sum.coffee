@@ -3,25 +3,25 @@ sum = new MultiFn {
   "default": -> 0
   
   # Return numbers
-  "Number": (_args) -> _args[0]
+  "Number": (_val) -> _val
   
   # Convert strings to integers
-  "String": (_args) -> parseInt(_args[0], 10)
+  "String": (_str) -> parseInt(_str, 10)
   
   # Convert strings to integers
-  "Boolean": (_args) -> (_args[0] && 1) || 0
+  "Boolean": (_bln) -> (_bln && 1) || 0
   
   # Recursively sum values for arrays
-  "Array": (_args) ->
+  "Array": (_arr) ->
     total = 0
-    for value in _args[0]
+    for value in _arr
       total += sum(value)
     return total
   
   # Recursively sum values for objects
-  "Object": (_args) ->
+  "Object": (_obj) ->
     total = 0
-    for own key, value of _args[0]
+    for own key, value of _obj
       total += sum(value)
     return total
 }

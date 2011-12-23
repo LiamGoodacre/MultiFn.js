@@ -6,32 +6,30 @@
     "default": function() {
       return 0;
     },
-    "Number": function(_args) {
-      return _args[0];
+    "Number": function(_val) {
+      return _val;
     },
-    "String": function(_args) {
-      return parseInt(_args[0], 10);
+    "String": function(_str) {
+      return parseInt(_str, 10);
     },
-    "Boolean": function(_args) {
-      return (_args[0] && 1) || 0;
+    "Boolean": function(_bln) {
+      return (_bln && 1) || 0;
     },
-    "Array": function(_args) {
-      var total, value, _i, _len, _ref;
+    "Array": function(_arr) {
+      var total, value, _i, _len;
       total = 0;
-      _ref = _args[0];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        value = _ref[_i];
+      for (_i = 0, _len = _arr.length; _i < _len; _i++) {
+        value = _arr[_i];
         total += sum(value);
       }
       return total;
     },
-    "Object": function(_args) {
-      var key, total, value, _ref;
+    "Object": function(_obj) {
+      var key, total, value;
       total = 0;
-      _ref = _args[0];
-      for (key in _ref) {
-        if (!__hasProp.call(_ref, key)) continue;
-        value = _ref[key];
+      for (key in _obj) {
+        if (!__hasProp.call(_obj, key)) continue;
+        value = _obj[key];
         total += sum(value);
       }
       return total;

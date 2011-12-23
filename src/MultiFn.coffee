@@ -48,7 +48,7 @@
         data.push $api.Fn(''+key, value)
       
       # MultiFn instance, execute the matching function
-      result = -> result.lookup(arguments...)?([arguments...])
+      result = -> result.lookup(arguments...)?(arguments...)
       # Looks up which function matches for some arguments
       result.lookup = -> $api.lookup result, data, data_default, arguments...
       # Adds a new function definition

@@ -59,7 +59,7 @@
         }
         result = function() {
           var _base;
-          return typeof (_base = result.lookup.apply(result, arguments)) === "function" ? _base(__slice.call(arguments)) : void 0;
+          return typeof (_base = result.lookup.apply(result, arguments)) === "function" ? _base.apply(null, arguments) : void 0;
         };
         result.lookup = function() {
           return $api.lookup.apply($api, [result, data, data_default].concat(__slice.call(arguments)));
