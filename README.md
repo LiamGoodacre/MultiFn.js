@@ -12,7 +12,7 @@ JavaScript:
 var myFn = new MultiFn({
   "Number Number": function (_args) { return myFn(_args[0]) + myFn(_args[1]); }
   "Number": function (_args) { return _args[0]; }
-  "String": function (_args) { return parseInt(_args[0]); }
+  "String": function (_args) { return parseInt(_args[0], 10); }
 });
 </pre>
 
@@ -21,6 +21,6 @@ CoffeeScript:
 myFn = new MultiFn {
   "Number Number": (_args) -> myFn(_args[0]) + myFn(_args[1])
   "Number":  (_args) -> _args[0]
-  "String": (_args) -> parseInt(_args[0])
+  "String": (_args) -> parseInt(_args[0], 10)
 }
 </pre>
