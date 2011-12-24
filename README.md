@@ -45,9 +45,9 @@ var someFn = new MultiFn({
 </pre>
 
 ## Types
-The string of types identifying the arguments for an implementation, is used a space delimited sequence of regular expressions.
+The string of types identifying the arguments for an implementation, is a space delimited sequence of regular expressions.
 
-This means that instead of writing "Number", you could write "Num", or event just "N".  It also means you can do things like "Element" which would match "HTMLElement", "HTMLBodyElement", etc...
+This means that instead of writing "Number", you could write "^Num", or event just "^N".  It also means you can do things like "Element$" which would match "HTMLElement", "HTMLBodyElement", etc...
 
 Another adavantage to this, is that ".\*" will match any type of value:<pre>
 "Number .* Number": (\_num1, \_anything, \_num2) -> #...
